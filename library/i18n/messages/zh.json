@@ -1,10 +1,41 @@
 {
-  "getStarted": "开始编辑 app/page.tsx。",
-  "saveChanges": "保存并立即查看更改。",
-  "deploy": "立即部署",
-  "readDocs": "阅读文档",
-  "learn": "学习",
-  "examples": "示例",
-  "gotoNext": "前往 nextjs.org →",
-   "Checkout": "购买"
+  "login": {
+    "signIn": "Sign in with Google",
+    "signOut": "Sign out",
+    "welcome": "Welcome, {name}!"
+  },
+  "home": {
+    "getStarted": "开始编辑 app/page.tsx。",
+    "saveChanges": "保存并立即查看更改。",
+    "deploy": "立即部署",
+    "readDocs": "阅读文档",
+    "learn": "学习",
+    "examples": "示例",
+    "gotoNext": "前往 nextjs.org →",
+    "Checkout": "购买"
+  },
+  "Cookie": {
+    "CookieConsent": "cookie同意",
+    "message": "我们使用 Cookie 来改善您的体验。您可以选择您的偏好设置。",
+    "learnMore": "了解更多，请查看我们的",
+    "privacyPolicy": "隐私政策",
+    "customize": "自定义",
+    "reject": "拒绝",
+    "accept": "接受",
+    "prefTitle": "Cookie 偏好设置",
+    "necessary": {
+      "title": "必要的 Cookie",
+      "desc": "网站功能所必需。"
+    },
+    "analytics": {
+      "title": "分析类 Cookie",
+      "desc": "通过收集使用数据帮助我们改进网站。"
+    },
+    "marketing": {
+      "title": "营销类 Cookie",
+      "desc": "用于个性化广告。"
+    },
+    "cancel": "取消",
+    "save": "保存偏好"
+  }
 }
