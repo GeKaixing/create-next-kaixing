@@ -1,53 +1,54 @@
-import {notFound} from 'next/navigation';
-import {Locale, hasLocale, NextIntlClientProvider} from 'next-intl';
-import {getTranslations, setRequestLocale} from 'next-intl/server';
-import {clsx} from 'clsx';
-import {Inter} from 'next/font/google';
-import './styles.css';
-import { routing } from '@/library/i18n/routing';
+import { notFound } from 'next/navigation';
+import { Locale, hasLocale, NextIntlClientProvider } from 'next-intl';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { clsx } from 'clsx';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({subsets: ['latin']});
+import { routing } from '@/library/i18n/routing';
+import Navigation from '@/components/Navigation';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export function generateStaticParams() {
-  return routing.locales.map((locale) => ({locale}));
+    return routing.locales.map((locale) => ({ locale }));
 }
 
 export async function generateMetadata(
-  props: Omit<LayoutProps<'/[locale]'>, 'children'>
+    props: Omit<LayoutProps<'/[locale]'>, 'children'>
 ) {
-  const {locale} = await props.params;
+    const { locale } = await props.params;
 
-  const t = await getTranslations({
-    locale: locale as Locale,
-    namespace: 'LocaleLayout'
-  });
+    const t = await getTranslations({
+        locale: locale as Locale,
+        namespace: 'LocaleLayout'
+    });
 
-  return {
-    title: t('title')
-  };
+    return {
+        title: t('title')
+    };
 }
 
 export default async function LocaleLayout({
-  children,
-  params
+    children,
+    params
 }: LayoutProps<'/[locale]'>) {
-  // Ensure that the incoming `locale` is valid
-  const {locale} = await params;
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
+    // Ensure that the incoming `locale` is valid
+    const { locale } = await params;
+    if (!hasLocale(routing.locales, locale)) {
+        notFound();
+    }
 
-  // Enable static rendering
-  setRequestLocale(locale);
+    // Enable static rendering
+    setRequestLocale(locale);
 
-  return (
-    <html className="h-full" lang={locale}>
-      <body className={clsx(inter.className, 'flex h-full flex-col')}>
-        <NextIntlClientProvider>
-         
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
+    return (
+        <html className="h-full" lang={locale}>
+            <body className={clsx(inter.className, 'flex h-full flex-col')}>
+                <NextIntlClientProvider>
+                    <Navigation />
+                    {children}
+                </NextIntlClientProvider>
+            </body>
+        </html>
+    );
 }

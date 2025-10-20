@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "postbuild": "pagefind --site .next/server/app/docs --output-path public/_pagefind"
+    "postbuild": "pagefind --site .next/server/app/[docs]/docs --output-path public/_pagefind"
   },
   "dependencies": {
     "@stripe/stripe-js": "^8.1.0",
