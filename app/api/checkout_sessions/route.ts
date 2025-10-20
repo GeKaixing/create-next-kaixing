@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { stripe } from "@/library/stripe/stripe";
 import { getUserLocale } from "@/library/i18n/services/locale";
 import Stripe from "stripe";
+import { NextURL } from "next/dist/server/web/next-url";
 
 export async function POST() {
   try {
@@ -25,11 +26,11 @@ export async function POST() {
       success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/?canceled=true`,
     });
-    return NextResponse.redirect(session.url, 303);
+    return NextResponse.redirect(session.url as string | NextURL | URL, 303);
   } catch (err) {
     return NextResponse.json(
-      { error: err.message },
-      { status: err.statusCode || 500 }
+      { error: err instanceof Error ? err.message : String(err) },
+      { status: err instanceof Error && 'statusCode' in err ? (err as any).statusCode : 500 }
     );
   }
 }
