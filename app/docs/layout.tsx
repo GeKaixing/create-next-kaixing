@@ -19,13 +19,13 @@ const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>
 
 export default async function RootLayout({children}: {children: React.ReactNode}) {
     return (
-        <div
+        <html
             // Not required, but good for SEO
-            // lang="en"
+            lang="en"
             // Required to be set
-            // dir="ltr"
+            dir="ltr"
             // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
-            // suppressHydrationWarning
+            suppressHydrationWarning
         >
         <Head
             // ... Your additional head options
@@ -33,7 +33,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
             <link rel="shortcut icon" href="/images/general/icon.svg"/>
             {/* Your additional tags should be passed as `children` of `<Head>` element */}
         </Head>
-        <div>
+        <body>
         <Layout
             // banner={banner}
             navbar={navbar}
@@ -44,7 +44,7 @@ export default async function RootLayout({children}: {children: React.ReactNode}
         >
             {children}
         </Layout>
-        </div>
-        </div>
+        </body>
+        </html>
     )
 }
