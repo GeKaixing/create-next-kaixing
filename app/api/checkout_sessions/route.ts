@@ -6,15 +6,17 @@ import { getUserLocale } from "@/library/i18n/services/locale";
 import Stripe from "stripe";
 import { NextURL } from "next/dist/server/web/next-url";
 
+
 export async function POST() {
   try {
+ 
     const headersList = await headers();
     const locale = await getUserLocale();
     const origin = headersList.get("origin");
 
     // Create Checkout Sessions from body params.
     const session = await stripe.checkout.sessions.create({
-      locale:locale as Stripe.Checkout.SessionCreateParams.Locale, 
+      locale: locale as Stripe.Checkout.SessionCreateParams.Locale,
       line_items: [
         {
           // Provide the exact Price ID (for example, price_1234) of the product you want to sell
@@ -25,6 +27,9 @@ export async function POST() {
       mode: "subscription",
       success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/?canceled=true`,
+      metadata: {
+        userId: "abc123", // 你可以从登录态或数据库中动态获取
+      },
     });
     return NextResponse.redirect(session.url as string | NextURL | URL, 303);
   } catch (err) {
