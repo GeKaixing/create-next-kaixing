@@ -3,14 +3,13 @@ import { Head } from 'nextra/components'
 import 'nextra-theme-docs/style.css'
 import { getPageMap } from 'nextra/page-map';
 
-
-export async function getLocalizedPageMap() {
+export async function getLocalizedPageMap(lang) {
     // 假设 getPageMap 返回一个 PageItem 数组
-    const pageMap= await getPageMap();
+    const pageMap = await getPageMap(lang);
 
     // newPageMap 的类型推断为 PageItem[]
     // @ts-ignore
-    const newPageMap = pageMap.filter((pageItem, index) =>pageItem.name !== '[locale]');
+    const newPageMap = pageMap.filter((pageItem, index) => pageItem.name !== '[locale]');
 
     return newPageMap;
 }
@@ -28,12 +27,13 @@ const navbar = (
 )
 const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>
 
-export default async function RootLayout({ children }) {
-    const pageMap = await getLocalizedPageMap();
+export default async function RootLayout({ children, params }) {
+    const { locale} = await params;
+    const pageMap = await getLocalizedPageMap(locale);
     return (
         <html
             // Not required, but good for SEO
-            lang="en"
+            lang={locale}
             // Required to be set
             dir="ltr"
             // Suggested by `next-themes` package https://github.com/pacocoursey/next-themes#with-app
