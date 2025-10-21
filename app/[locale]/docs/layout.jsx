@@ -31,6 +31,7 @@ export default async function RootLayout({ children, params }) {
     return (
         <Layout
             // banner={banner}
+            darkMode={false}
             navbar={navbar}
             pageMap={pageMap}
             docsRepositoryBase="https://github.com/phucbm/nextra-docs-starter/tree/main"

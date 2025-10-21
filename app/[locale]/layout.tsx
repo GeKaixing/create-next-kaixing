@@ -41,8 +41,8 @@ export default async function LocaleLayout({
     setRequestLocale(locale);
 
     return (
-        <html className="h-full bg-white" lang={locale} >
-            <body className={clsx(inter.className, 'bg-white flex h-full flex-col')}>
+        <html className="h-full " lang={locale} >
+            <body className={clsx(inter.className, ' flex h-full flex-col')}>
                 <NextIntlClientProvider>
                     {children}
                 </NextIntlClientProvider>

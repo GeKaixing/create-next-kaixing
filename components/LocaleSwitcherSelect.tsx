@@ -5,6 +5,7 @@ import {useParams} from 'next/navigation';
 import {Locale} from 'next-intl';
 import {ChangeEvent, ReactNode, useTransition} from 'react';
 import { usePathname, useRouter } from '@/library/i18n/navigation';
+import { ChevronDown } from 'lucide-react';
 
 
 type Props = {
@@ -39,7 +40,7 @@ export default function LocaleSwitcherSelect({
   return (
     <label
       className={clsx(
-        'relative text-gray-400',
+        'relative text-gray-400  ',
         isPending && 'transition-opacity [&:disabled]:opacity-30'
       )}
     >
@@ -52,7 +53,7 @@ export default function LocaleSwitcherSelect({
       >
         {children}
       </select>
-      <span className="pointer-events-none absolute right-2 top-[8px]">⌄</span>
+      <span className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 "><ChevronDown/></span>
     </label>
   );
 }

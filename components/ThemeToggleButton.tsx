@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { Sun, Moon, Monitor } from "lucide-react"; // 图标库，可换成其他的
+import { useTheme } from "nextra-theme-docs";
 
 export default function ThemeToggleButton() {
   const [theme, setTheme] = useState("system");
-
+  const { theme:themedocs, setTheme:setThemesdocs } = useTheme()
   // 初始化主题
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme") || "system";
+    const storedTheme = localStorage.getItem("theme") as "system" | "dark" | "light" || "system";
     setTheme(storedTheme);
     applyTheme(storedTheme);
 
@@ -22,7 +23,7 @@ export default function ThemeToggleButton() {
   }, []);
 
   // 应用主题逻辑
-  const applyTheme = (selectedTheme) => {
+  const applyTheme = (selectedTheme: "system" | "dark" | "light") => {
     if (selectedTheme === "system") {
       const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       document.documentElement.classList.toggle("dark", isDark);
@@ -33,6 +34,7 @@ export default function ThemeToggleButton() {
 
   // 切换主题（循环切换 light → dark → system）
   const toggleTheme = () => {
+    setThemesdocs(theme)
     const next =
       theme === "light" ? "dark" : theme === "dark" ? "system" : "light";
     setTheme(next);
@@ -58,7 +60,7 @@ export default function ThemeToggleButton() {
   return (
     <button
       onClick={toggleTheme}
-      className="flex items-center gap-2 rounded-xl border px-3 py-2 text-sm font-medium hover:bg-gray-100 dark:hover:bg-neutral-800 transition-all"
+      className="flex items-center gap-2 rounded-xl  px-3 py-2 text-sm font-medium transition-all"
       aria-label="Toggle Theme"
     >
       {icon} <span>{text}</span>
