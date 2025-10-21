@@ -1,12 +1,45 @@
 {
+  "NewPassword": {
+    "passwordLabel": "New Password",
+    "passwordDescription": "Enter your new password.",
+    "confirmPasswordLabel": "Confirm Password",
+    "confirmPasswordDescription": "Re-enter your new password.",
+    "passwordTooShort": "Password must be at least 6 characters.",
+    "passwordsNotMatch": "Passwords do not match.",
+    "submitButton": "Set New Password"
+  },
+  "ForgotPassword": {
+    "emailLabel": "Email",
+    "emailDescription": "Enter the email associated with your account.",
+    "emailInvalid": "Please enter a valid email address."
+  },
+  "Auth": {
+    "email": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Re-enter your password",
+    "verificationCode": "Verification Code",
+    "verificationCodePlaceholder": "Enter the 6-digit verification code",
+    "sendCode": "Send Code",
+    "sending": "Sending...",
+    "forgotPassword": "Forgot password?",
+    "pleaseEnterEmail": "Please enter your email address first",
+    "sendFailed": "Failed to send verification code, please try again later",
+    "login": "Login",
+    "signup": "Sign Up",
+    "resetPassword": "Reset Password"
+  },
   "login": {
     "signIn": "Sign in with Google",
     "signOut": "Sign out",
     "welcome": "Welcome, {name}!"
   },
-    "LocaleLayout": {
+  "LocaleLayout": {
     "title": "next-intl example"
-  },  "Error": {
+  },
+  "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
     "title": "Something went wrong!"
   },
@@ -46,8 +79,7 @@
   "PathnamesPage": {
     "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
     "title": "Pathnames"
-  }
-,
+  },
   "home": {
     "getStarted": "Get started by editing app/page.tsx.",
     "saveChanges": "Save and see your changes instantly.",

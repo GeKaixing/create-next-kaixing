@@ -1,4 +1,36 @@
 {
+  "NewPassword": {
+    "passwordLabel": "新密码",
+    "passwordDescription": "请输入您的新密码。",
+    "confirmPasswordLabel": "确认密码",
+    "confirmPasswordDescription": "请再次输入您的新密码。",
+    "passwordTooShort": "密码至少需要 6 个字符。",
+    "passwordsNotMatch": "两次输入的密码不一致。",
+    "submitButton": "设置新密码"
+  },
+    "ForgotPassword": {
+    "emailLabel": "邮箱",
+    "emailDescription": "请输入与您账号关联的邮箱。",
+    "emailInvalid": "请输入有效的邮箱地址。"
+  },
+  "Auth": {
+    "email": "邮箱",
+    "emailPlaceholder": "请输入邮箱地址",
+    "password": "密码",
+    "passwordPlaceholder": "请输入密码",
+    "confirmPassword": "确认密码",
+    "confirmPasswordPlaceholder": "请再次输入密码",
+    "verificationCode": "验证码",
+    "verificationCodePlaceholder": "请输入6位数字验证码",
+    "sendCode": "发送验证码",
+    "sending": "发送中...",
+    "forgotPassword": "忘记密码？",
+    "pleaseEnterEmail": "请先输入邮箱地址",
+    "sendFailed": "验证码发送失败，请稍后再试",
+    "login": "登录",
+    "signup": "注册",
+    "resetPassword": "重置密码"
+  },
   "login": {
     "signIn": "Sign in with Google",
     "signOut": "Sign out",
@@ -6,7 +38,8 @@
   },
   "LocaleLayout": {
     "title": "next-intl example"
-  },  "Error": {
+  },
+  "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
     "title": "Something went wrong!"
   },
@@ -14,7 +47,6 @@
     "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
     "title": "next-intl example"
   },
-
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, zh {中文} en {English} other {Unknown}}"
@@ -47,8 +79,7 @@
   "PathnamesPage": {
     "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
     "title": "Pathnames"
-  }
-,
+  },
   "home": {
     "getStarted": "开始编辑 app/page.tsx。",
     "saveChanges": "保存并立即查看更改。",

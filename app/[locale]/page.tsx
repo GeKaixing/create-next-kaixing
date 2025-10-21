@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 import PayButton from "@/components/PayButton";
 import CookieConsent from "@/components/CookieConsent";
 import AuthSignInButton from "@/components/AuthSignInButton";
@@ -14,7 +13,7 @@ export default function Home() {
 
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start ">
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -28,7 +27,7 @@ export default function Home() {
           <li className="tracking-[-.01em]">{t("saveChanges")}</li>
         </ol>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        <div className="flex gap-4 items-center flex-col sm:flex-row flex-wrap">
           <a
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
             href="https://vercel.com/new"
@@ -90,6 +89,14 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             docs
+          </Link>
+          <Link
+            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+            href={`${locale}/login`}
+            
+            rel="noopener noreferrer"
+          >
+            login&signup
           </Link>
 
         </div>
