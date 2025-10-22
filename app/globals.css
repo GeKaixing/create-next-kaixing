@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import 'nextra-theme-docs/style.css';
+@import 'nextra-theme-blog/style.css';
 @import "tw-animate-css"; 
 @custom-variant dark (&:where(.dark, .dark *));
 :root {

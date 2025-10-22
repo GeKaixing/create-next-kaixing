@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { Sun, Moon, Monitor } from "lucide-react"; // 图标库，可换成其他的
-import { useTheme } from "nextra-theme-docs";
+import { useTheme } from "next-themes";
 
 export default function ThemeToggleButton() {
   const [theme, setTheme] = useState("system");
-  const { theme:themedocs, setTheme:setThemesdocs } = useTheme()
+  const { theme: currentTheme, setTheme: setThemeFromProvider } = useTheme()
   // 初始化主题
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme") as "system" | "dark" | "light" || "system";
@@ -34,7 +34,7 @@ export default function ThemeToggleButton() {
 
   // 切换主题（循环切换 light → dark → system）
   const toggleTheme = () => {
-    setThemesdocs(theme)
+    setThemeFromProvider(theme)
     const next =
       theme === "light" ? "dark" : theme === "dark" ? "system" : "light";
     setTheme(next);
