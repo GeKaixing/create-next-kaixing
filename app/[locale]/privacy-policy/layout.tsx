@@ -21,7 +21,8 @@ export default async function PrivacyPolicyLayout({ children, params }:{
   )
 
   return (
-        <Layout banner={banner}
+        <Layout 
+          banner={banner}
         >
           <Navbar pageMap={await getPageMap(locale || 'en')}>
             <Search />
