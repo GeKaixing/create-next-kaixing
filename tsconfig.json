@@ -33,12 +33,12 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/[locale]/docs/[[...mdxPath]]/page.jsx",
-    "app/[locale]/docs/layout.jsx",
+    "app/[locale]/docs/[[...mdxPath]]/page.tsx",
+    "app/[locale]/docs/layout.tsx",
     "app/[locale]/success/page.jsx",
-    "app/[locale]/privacy-policy/layout.jsx",
+    "app/[locale]/privacy-policy/layout.tsx",
     ".next/dev/types/**/*.ts"
-  ],
+, "app/[locale]/privacy-policy/page.mdx"  ],
   "exclude": [
     "node_modules"
   ]

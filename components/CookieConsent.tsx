@@ -47,16 +47,30 @@ export function setCookie(name: string, value: string, options: CookieOptions = 
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
   useEffect(() => {
-     const cookie= getCookie("site_cookie_consent_v1")
-     console.log(cookie)
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+    
+    const cookie = getCookie("site_cookie_consent_v1")
+    console.log(cookie)
     //@ts-ignore
     if (cookie) {
       setShowBanner(false)
     } else {
       setShowBanner(true)
     }
-  }, [])
+  }, [mounted])
+  
+  // 在组件挂载前不渲染，避免 hydration 错误
+  if (!mounted) {
+    return null;
+  }
+  
   return (
     <div>
       <button onClick={() => { setShowBanner(true) }}>CookieConsent</button>

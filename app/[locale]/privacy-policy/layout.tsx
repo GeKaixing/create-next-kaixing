@@ -7,7 +7,12 @@ export const metadata = {
   title: '隐私政策'
 }
 
-export default async function PrivacyPolicyLayout({ children, params }) {
+export default async function PrivacyPolicyLayout({ children, params }:{
+  children: React.ReactNode,
+  params: {
+    locale: string
+  }
+}) {
   const { locale } = await params
   const banner = (
     <Banner storageKey="pp-release">
@@ -16,9 +21,6 @@ export default async function PrivacyPolicyLayout({ children, params }) {
   )
 
   return (
-    <html lang={locale || 'en'} suppressHydrationWarning>
-      <Head backgroundColor={{ dark: '#0f172a', light: '#f8fafc' }} />
-      <body>
         <Layout banner={banner}
         >
           <Navbar pageMap={await getPageMap(locale || 'en')}>
@@ -32,7 +34,5 @@ export default async function PrivacyPolicyLayout({ children, params }) {
             © {new Date().getFullYear()} Privacy Policy
           </Footer>
         </Layout>
-      </body>
-    </html>
   )
 }

@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { clsx } from 'clsx';
 import { Inter } from 'next/font/google';
 import { routing } from '@/library/i18n/routing';
+import { getMessages } from 'next-intl/server';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -40,13 +41,16 @@ export default async function LocaleLayout({
     // Enable static rendering
     setRequestLocale(locale);
 
+    // Get messages for the current locale
+    const messages = await getMessages();
+
     return (
-        <html className="h-full" lang={locale} >
-            <body className={clsx(inter.className, ' flex h-full flex-col')}>
-                <NextIntlClientProvider>
+        <html className="h-full" lang={locale} suppressHydrationWarning>
+            <body className={clsx(inter.className, ' flex h-full flex-col')} suppressHydrationWarning>
+                <NextIntlClientProvider locale={locale} messages={messages}>
                     {children}
                 </NextIntlClientProvider>
             </body>
-        </html>
+        </html> 
     );
 }

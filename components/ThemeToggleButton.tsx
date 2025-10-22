@@ -6,9 +6,18 @@ import { useTheme } from "next-themes";
 
 export default function ThemeToggleButton() {
   const [theme, setTheme] = useState("system");
+  const [mounted, setMounted] = useState(false);
   const { theme: currentTheme, setTheme: setThemeFromProvider } = useTheme()
+  
+  // 确保组件已挂载，避免 hydration 错误
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // 初始化主题
   useEffect(() => {
+    if (!mounted) return;
+    
     const storedTheme = localStorage.getItem("theme") as "system" | "dark" | "light" || "system";
     setTheme(storedTheme);
     applyTheme(storedTheme);
@@ -20,7 +29,7 @@ export default function ThemeToggleButton() {
       media.addEventListener("change", handleChange);
       return () => media.removeEventListener("change", handleChange);
     }
-  }, []);
+  }, [mounted]);
 
   // 应用主题逻辑
   const applyTheme = (selectedTheme: "system" | "dark" | "light") => {
@@ -56,6 +65,19 @@ export default function ThemeToggleButton() {
   };
 
   const { icon, text } = getLabel();
+
+  // 在组件挂载前不渲染，避免 hydration 错误
+  if (!mounted) {
+    return (
+      <button
+        className="flex items-center gap-2 rounded-xl  px-3 py-2 text-sm font-medium transition-all"
+        aria-label="Toggle Theme"
+        disabled
+      >
+        <Monitor size={18} /> <span>System</span>
+      </button>
+    );
+  }
 
   return (
     <button

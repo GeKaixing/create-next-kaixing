@@ -1,7 +1,7 @@
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
 import { getPageMap } from 'nextra/page-map';
-
-export async function getLocalizedPageMap(lang) {
+import 'nextra-theme-docs/style.css'
+export async function getLocalizedPageMap(lang: string) {
     // 假设 getPageMap 返回一个 PageItem 数组
     const pageMap = await getPageMap(lang);
 
@@ -25,12 +25,21 @@ const navbar = (
 )
 const footer = <Footer>MIT {new Date().getFullYear()} © Nextra.</Footer>
 
-export default async function RootLayout({ children, params }) {
+export default async function RootLayout({ children, params }:{
+    children: React.ReactNode,
+    params: {
+        locale: string
+    }
+}) {
     const { locale } = await params;
     const pageMap = await getLocalizedPageMap(locale);
     return (
         <Layout
             // banner={banner}
+            toc={
+                {
+                    float: true, // ✅ 让 TOC 悬浮在右侧}
+                }}
             darkMode={false}
             navbar={navbar}
             pageMap={pageMap}
@@ -40,7 +49,7 @@ export default async function RootLayout({ children, params }) {
         // ... Your additional layout options
         >
             {children}
-        </Layout>
+        </Layout >
 
     )
 }
