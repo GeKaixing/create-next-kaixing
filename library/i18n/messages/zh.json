@@ -37,7 +37,7 @@
     "welcome": "Welcome, {name}!"
   },
   "LocaleLayout": {
-    "title": "next-intl example"
+    "title": "next-template"
   },
   "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
