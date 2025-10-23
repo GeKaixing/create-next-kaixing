@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 import { auth } from '@/library/auth/auth'
 import { stripe } from '@/library/stripe/stripe'
-import ServerAuthGuard from '@/components/ServerAuthGuard'
+import ServerAuthGuard from '@/components/example/ServerAuthGuard'
 
 export default async function Success({ searchParams }) {
   const { session_id } = await searchParams

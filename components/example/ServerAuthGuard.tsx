@@ -1,3 +1,9 @@
+/**
+ * @description: server auth guard component
+ * @param children: React.ReactNode - 子组件
+ * @param redirectTo: string - 重定向的
+ * @returns {React.ReactNode} server auth guard component
+ */
 import { auth } from '@/library/auth/auth';
 import { redirect } from 'next/navigation';
 
@@ -16,5 +22,5 @@ export default async function ServerAuthGuard({
     redirect(redirectTo);
   }
   
-  return <>{children}</>;
+  return children;
 }

@@ -1,3 +1,7 @@
+/**
+ * @description: subscription manager component
+ * @returns {React.ReactNode} subscription manager component
+ */
 'use client';
 
 import { useState, useEffect } from 'react';

@@ -1,5 +1,5 @@
 import { useTranslations } from 'next-intl';
-import ServerAuthGuard from '@/components/ServerAuthGuard';
+import ServerAuthGuard from '@/components/example/ServerAuthGuard';
 
 export default function AuthTestPage() {
   const t = useTranslations("subscription");

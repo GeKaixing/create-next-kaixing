@@ -7,7 +7,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "postbuild": "node scripts/generate-static-snapshots.js && pagefind --site public/snapshots --output-path public/_pagefind"
+    "postbuild": "node scripts/generate-static-snapshots.js && pagefind --site public/snapshots --output-path public/_pagefind && next-sitemap"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -23,6 +23,7 @@
     "next": "^16.0.0",
     "next-auth": "^5.0.0-beta.29",
     "next-intl": "^4.3.12",
+    "next-sitemap": "^4.2.3",
     "nextra": "^4.6.0",
     "nextra-theme-blog": "^4.6.0",
     "nextra-theme-docs": "^4.6.0",

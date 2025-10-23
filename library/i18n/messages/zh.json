@@ -1,4 +1,13 @@
 {
+  "Subscription": {
+    "subscription": "订阅"
+  },
+  "PrivacyPolicy": {
+    "privacyPolicy": "隐私政策"
+  },
+  "Docs": {
+    "docs": "文档"
+  },
   "NewPassword": {
     "passwordLabel": "新密码",
     "passwordDescription": "请输入您的新密码。",
@@ -32,12 +41,12 @@
     "resetPassword": "重置密码"
   },
   "login": {
-    "signIn": "Sign in with Google",
-    "signOut": "Sign out",
-    "welcome": "Welcome, {name}!"
+    "signIn": "GitHub登录",
+    "signOut": "登出",
+    "welcome": "欢迎，{name}!"
   },
   "LocaleLayout": {
-    "title": "next-template"
+    "title": "next-saas-模板"
   },
   "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",

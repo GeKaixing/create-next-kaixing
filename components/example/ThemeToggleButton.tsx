@@ -1,3 +1,7 @@
+/**
+ * @description: theme toggle button component
+ * @returns {React.ReactNode} theme toggle button component
+ */
 "use client";
 
 import { useEffect, useState } from "react";
@@ -7,7 +11,7 @@ import { useTheme } from "next-themes";
 export default function ThemeToggleButton() {
   const [theme, setTheme] = useState("system");
   const [mounted, setMounted] = useState(false);
-  const { theme: currentTheme, setTheme: setThemeFromProvider } = useTheme()
+  const { setTheme: setThemeFromProvider } = useTheme()
   
   // 确保组件已挂载，避免 hydration 错误
   useEffect(() => {

@@ -1,3 +1,7 @@
+/**
+ * @description: locale switcher component
+ * @returns {React.ReactNode} locale switcher component
+ */
 import {useLocale, useTranslations} from 'next-intl';
 import LocaleSwitcherSelect from './LocaleSwitcherSelect';
 import { routing } from '@/library/i18n/routing';

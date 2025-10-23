@@ -1,4 +1,13 @@
 {
+  "Subscription": {
+    "subscription": "Subscription"
+  },
+  "PrivacyPolicy": {
+    "privacyPolicy": "Privacy Policy"
+  },
+  "Docs": {
+    "docs": "文档"
+  },
   "NewPassword": {
     "passwordLabel": "New Password",
     "passwordDescription": "Enter your new password.",
@@ -32,12 +41,12 @@
     "resetPassword": "Reset Password"
   },
   "login": {
-    "signIn": "Sign in with Google",
+    "signIn": "Sign in with Github",
     "signOut": "Sign out",
     "welcome": "Welcome, {name}!"
   },
   "LocaleLayout": {
-    "title": "next-template"
+    "title": "next-saas-template"
   },
   "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
@@ -62,6 +71,7 @@
     "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
     "title": "Page not found"
   },
+  
   "PageLayout": {
     "links": {
       "docs": {

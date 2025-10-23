@@ -1,14 +1,18 @@
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
-import PayButton from "@/components/PayButton";
-import CookieConsent from "@/components/CookieConsent";
-import AuthSignInButton from "@/components/AuthSignInButton";
+import PayButton from "@/components/example/PayButton";
+import CookieConsent from "@/components/example/CookieConsent";
+import AuthSignInButton from "@/components/example/AuthSignInButton";
 import Link from "next/link";
-import LocaleSwitcher from "@/components/LocaleSwitcher";
-import ThemeToggleButton from "@/components/ThemeToggleButton";
+import LocaleSwitcher from "@/components/example/LocaleSwitcher";
+import ThemeToggleButton from "@/components/example/ThemeToggleButton";
 
 export default function Home() {
   const t = useTranslations("home");
+  const tDocs = useTranslations("Docs");
+  const tPrivacyPolicy = useTranslations("PrivacyPolicy");
+  const tSubscription = useTranslations("Subscription");
+  const tLogin = useTranslations("Auth");
   const locale = useLocale();
 
   return (
@@ -84,19 +88,19 @@ export default function Home() {
 
           <Link
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href={`${locale}/docs`}
+            href={`/docs`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            docs
+            {tDocs("docs")}
           </Link>
           <Link
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href={`${locale}/login`}
+            href={`/login`}
             
             rel="noopener noreferrer"
           >
-            login&signup
+            {tLogin("login")}
           </Link>
           <Link
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
@@ -104,7 +108,7 @@ export default function Home() {
             
             rel="noopener noreferrer"
           >
-            privacy policy
+            {tPrivacyPolicy("privacyPolicy")}
           </Link>
           <Link
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
@@ -112,7 +116,7 @@ export default function Home() {
             
             rel="noopener noreferrer"
           >
-            subscription
+            {tSubscription("subscription")}
           </Link>
           <Link
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"

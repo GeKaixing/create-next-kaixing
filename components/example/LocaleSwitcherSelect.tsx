@@ -1,3 +1,7 @@
+/**
+ * @description: locale switcher select component
+ * @returns {React.ReactNode} locale switcher select component
+ */
 'use client';
 
 import clsx from 'clsx';

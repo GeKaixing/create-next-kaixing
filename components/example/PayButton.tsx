@@ -1,5 +1,8 @@
+/**
+ * @description: pay button component
+ * @returns {React.ReactNode} pay button component
+ */
 import { useTranslations } from 'next-intl';
-import React from 'react'
 
 export default function PayButton() {
     const t = useTranslations("home");

@@ -1,6 +1,6 @@
-import SubscriptionManager from '@/components/SubscriptionManager';
+import SubscriptionManager from '@/components/example/SubscriptionManager';
 import { useTranslations } from 'next-intl';
-import ServerAuthGuard from '@/components/ServerAuthGuard';
+import ServerAuthGuard from '@/components/example/ServerAuthGuard';
 
 export default function SubscriptionPage() {
   const t = useTranslations("subscription");
