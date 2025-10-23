@@ -2,8 +2,12 @@
 import AuthForm from '@/components/AuthForm'
 import ForgotPassword from '@/components/ForgotPassword'
 import React from 'react'
+import { useSearchParams } from 'next/navigation'
 
 export default function page() {
+    const searchParams = useSearchParams()
+    const callbackUrl = searchParams.get('callbackUrl') || '/'
+    
     return (
         <div className='flex '>
             <AuthForm mode='login'

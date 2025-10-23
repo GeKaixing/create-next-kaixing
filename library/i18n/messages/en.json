@@ -113,5 +113,28 @@
     },
     "cancel": "Cancel",
     "save": "Save preferences"
+  },
+  "subscription": {
+    "title": "Subscription Management",
+    "noSubscription": "You don't have an active subscription",
+    "errorLoading": "Error loading subscription information",
+    "currentPlan": "Current Plan",
+    "active": "Active",
+    "inactive": "Inactive",
+    "planName": "Plan Name",
+    "price": "Price",
+    "month": "month",
+    "cancellationInfo": "Cancellation Info",
+    "renewalInfo": "Renewal Info",
+    "willExpireOn": "Subscription will expire on {date}",
+    "nextBillingDate": "Next billing date: {date}",
+    "cancelling": "Cancelling...",
+    "cancelAtPeriodEnd": "Use until end of period, then stop renewal",
+    "reactivateSubscription": "Reactivate Subscription",
+    "subscribeNow": "Subscribe Now",
+    "cancellationScheduled": "Cancellation scheduled, will take effect at the end of current billing period",
+    "cancellationFailed": "Failed to cancel subscription, please try again later",
+    "reactivationSuccess": "Subscription reactivated",
+    "reactivationFailed": "Failed to reactivate subscription, please try again later"
   }
 }

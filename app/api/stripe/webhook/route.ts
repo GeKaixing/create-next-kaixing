@@ -39,8 +39,26 @@ export async function POST(req: Request) {
       break;
     }
 
+    case "customer.subscription.updated": {
+      const subscription = event.data.object as Stripe.Subscription;
+      console.log("📝 Subscription updated:", subscription.id);
+      
+      if (subscription.cancel_at_period_end) {
+        console.log("⚠️ Subscription will be canceled at period end:", subscription.current_period_end);
+        // 这里可以发送邮件通知用户订阅将在周期结束时取消
+        // 可以更新数据库中的用户订阅状态
+      }
+      break;
+    }
+
     case "customer.subscription.deleted": {
-      console.log("⚠️ Subscription canceled");
+      const subscription = event.data.object as Stripe.Subscription;
+      console.log("❌ Subscription canceled:", subscription.id);
+      
+      // 这里可以：
+      // 1. 更新数据库，将用户状态改为非会员
+      // 2. 发送取消确认邮件
+      // 3. 清理用户数据等
       break;
     }
 

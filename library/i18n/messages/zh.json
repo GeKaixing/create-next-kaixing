@@ -113,5 +113,28 @@
     },
     "cancel": "取消",
     "save": "保存偏好"
+  },
+  "subscription": {
+    "title": "订阅管理",
+    "noSubscription": "您当前没有活跃的订阅",
+    "errorLoading": "加载订阅信息时出错",
+    "currentPlan": "当前套餐",
+    "active": "活跃",
+    "inactive": "非活跃",
+    "planName": "套餐名称",
+    "price": "价格",
+    "month": "月",
+    "cancellationInfo": "取消信息",
+    "renewalInfo": "续费信息",
+    "willExpireOn": "订阅将在 {date} 到期",
+    "nextBillingDate": "下次扣费日期：{date}",
+    "cancelling": "正在取消...",
+    "cancelAtPeriodEnd": "使用至本期末，再停止续费",
+    "reactivateSubscription": "恢复订阅",
+    "subscribeNow": "立即订阅",
+    "cancellationScheduled": "已安排取消订阅，将在当前计费周期结束时生效",
+    "cancellationFailed": "取消订阅失败，请稍后重试",
+    "reactivationSuccess": "订阅已恢复",
+    "reactivationFailed": "恢复订阅失败，请稍后重试"
   }
 }
